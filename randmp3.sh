@@ -3,9 +3,7 @@
 keepX=11
 #mp3 player
 PLAYER="mpv"
-
-
-
+#cant think of better way to do this but this is for random words for artist and title in ffmpeg
 one=`sort -R list.txt |head -1`
 two=`sort -R list.txt |head -1`
 three=`sort -R list.txt |head -1`
