@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /usr/local/share/tourettes
+./randmp3.sh
+#echo -e  "\e[36mGee that was rude wasn't it!"
+echo -e "\e[36m\e[5mGee that was rude wasn't it!"
+echo -e "\e[0m"

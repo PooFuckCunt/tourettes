@@ -1,0 +1,6 @@
+#!/bin/bash
+FILE=file.txt
+LINES=`wc -l $FILE`
+RANDOM=`date +%N`
+NUMBER=$[ ( $RANDOM % $LINES ) + 1 ]
+WORD=`sed -n $NUMBER\p $FILE`
