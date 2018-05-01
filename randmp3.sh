@@ -23,5 +23,6 @@ ffmpeg -y -i /tmp/tourettes/tourettes.0.mp3 -metadata title="$one1 $two1 $three1
 #clean up old mp3s
 rm /tmp/tourettes/tourettes.0.mp3
 cd /tmp/tourettes && ls -tp | grep -v '/$' | tail -n +$keepX | xargs -d '\n' -r rm --
+#play the fucking mp3
 $PLAYER /tmp/tourettes/tourettes.$NAME.mp3
-#ffmpeg -i /tmp/tourettes/tourettes.mp3 -loop 1 -i ~/tourettes/images/04.png -shortest /tmp/out.avi
+
