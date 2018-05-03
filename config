@@ -1,0 +1,4 @@
+#the player you want to play the generated mp3s
+PLAYER=mpv
+#number of generated mp3s to save in /tmp/tourettes oldest ones will be deleted once it exceeds the below number
+keep=10

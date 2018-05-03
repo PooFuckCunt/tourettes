@@ -1,8 +1,8 @@
 #!/bin/bash
 #number of files to keep put one more than desired number e.g 11 for total of 10
-keepX=11
+keepX=$(expr 1 + `grep 'keep' config | sed -e 's#.*=\(\)#\1#'`)
 #mp3 player
-PLAYER="mpv"
+PLAYER=`grep 'PLAYER' config | sed -e 's#.*=\(\)#\1#'`
 #cant think of better way to do this but this is for random words for artist and title in ffmpeg
 one=`sort -R list.txt |head -1`
 two=`sort -R list.txt |head -1`
