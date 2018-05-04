@@ -3,6 +3,8 @@
 keepX=$(expr 1 + `grep 'keep' config | sed -e 's#.*=\(\)#\1#'`)
 #mp3 player
 PLAYER=`grep 'PLAYER' config | sed -e 's#.*=\(\)#\1#'`
+#lowest and highest numbers
+RANGE=`grep 'RANGE' config | sed -e 's#.*=\(\)#\1#'`
 #cant think of better way to do this but this is for random words for artist and title in ffmpeg
 one=`sort -R list.txt |head -1`
 two=`sort -R list.txt |head -1`
@@ -13,7 +15,7 @@ three1=`sort -R list.txt |head -1`
 #randome string for filename
 NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1)
 #random number for mp3 list
-rand=$(( ( RANDOM % 65 )  + 2 ))
+rand=`shuf -i $RANGE -n 1`
 #create dir 
 mkdir -p /tmp/tourettes
 #create random mp3
