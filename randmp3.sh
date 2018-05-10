@@ -1,9 +1,10 @@
 #!/bin/bash
-#number of files to keep put one more than desired number e.g 11 for total of 10
+#do not edit values below user the config file
+#number of files to keep put one more than desired number e.g 11 for total of 10 (value can be set in config)
 keepX=$(expr 1 + `grep 'keep' config | sed -e 's#.*=\(\)#\1#'`)
 #mp3 player
 PLAYER=`grep 'PLAYER' config | sed -e 's#.*=\(\)#\1#'`
-#lowest and highest numbers
+#lowest and highest numbers (value can be set in config)
 RANGE=`grep 'RANGE' config | sed -e 's#.*=\(\)#\1#'`
 #cant think of better way to do this but this is for random words for artist and title in ffmpeg
 one=`sort -R list.txt |head -1`
