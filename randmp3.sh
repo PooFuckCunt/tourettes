@@ -1,5 +1,5 @@
 #!/bin/bash
-#do not edit values below user the config file
+#do not edit values below use the config file
 #number of files to keep put one more than desired number e.g 11 for total of 10 (value can be set in config)
 keepX=$(expr 1 + `grep 'keep' config | sed -e 's#.*=\(\)#\1#'`)
 #mp3 player
