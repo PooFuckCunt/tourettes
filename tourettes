@@ -1,6 +1,14 @@
 #!/bin/bash
 cd /usr/local/share/tourettes
-./randmp3.sh
+
+if [ -z "$1" ]
+then
+      ./randmp3.sh
+else
+
+      ./words.sh "$@"
+fi
+
 #edit the exit comment to suit your needs
 echo -e "\e[36m\e[5mGee that was rude wasn't it!"
 echo -e "\e[0m"
