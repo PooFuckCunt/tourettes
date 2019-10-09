@@ -1,5 +1,5 @@
 #the player you want to play the generated mp3s
-PLAYER=mpv
+PLAYER=mpv -volume 70
 #number of generated mp3s to save in /tmp/tourettes oldest ones will be deleted once it exceeds the below number
 keep=10
 #range of mp3 numbers to randomly merge e.g play between 1 and 100 mp3s default is 1-65
