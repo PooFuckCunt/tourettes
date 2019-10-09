@@ -20,7 +20,7 @@ rand=`shuf -i $RANGE -n 1`
 #create dir 
 mkdir -p /tmp/tourettes
 #create random mp3
-cat `ls swearwords/*.mp3 |shuf |sort -R |shuf |sort -R |head -n$rand` > /tmp/tourettes/tourettes.0.mp3
+cat `find swearwords  -iname '*.mp3' |shuf |sort -R |shuf |sort -R |head -n$rand` > /tmp/tourettes/tourettes.0.mp3
 #reencode mp3
 ffmpeg -y -i /tmp/tourettes/tourettes.0.mp3 -metadata title="$one1 $two1 $three1" -metadata artist="$one $two $three" -vn -ar 44100 -ac 2 -ab 48k -f mp3 /tmp/tourettes/tourettes.$NAME.mp3 > /dev/null 2>&1
 #clean up old mp3s

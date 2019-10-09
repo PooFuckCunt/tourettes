@@ -1,6 +1,6 @@
 #!/bin/bash
-mkdir -p /usr/local/share/tourettes
-cp -a `pwd`/* /usr/local/share/tourettes
+sudo mkdir -p /usr/local/share/tourettes
+sudo cp -a `pwd`/* /usr/local/share/tourettes
 sudo cp tourettes /usr/bin
 sudo chmod a+x /usr/bin/tourettes
 sudo chmod a+x /usr/local/share/tourettes/words.sh
