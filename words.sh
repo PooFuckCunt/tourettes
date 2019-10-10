@@ -9,6 +9,8 @@ one1=`sort -R list.txt |head -1`
 two1=`sort -R list.txt |head -1`
 three1=`sort -R list.txt |head -1`
 PLAYER=`grep 'PLAYER' config | sed -e 's#.*=\(\)#\1#'`
+#added date timestamp to mp3 encodes
+DATE=`date +%d-%m-%Y-%H:%M:%S`
 
 find $SW_PATH -iname '*-*' > $FILES
 find $WORDS -iname '*-*' >> $FILES
@@ -25,7 +27,7 @@ do
  cat `grep "/$words-"  $FILES |head -n1` >> /tmp/tourettes/phrase.0.mp3
 done
 
-ffmpeg -y -i /tmp/tourettes/phrase.0.mp3 -metadata title="$one1 $two1 $three1" -metadata artist="$one $two $three" -vn -ar 44100 -ac 2 -ab 48k -f mp3 /tmp/tourettes/phrase.mp3 > /dev/null 2>&1
+ffmpeg -y -i /tmp/tourettes/phrase.0.mp3 -metadata date="$DATE" -metadata title="$one1 $two1 $three1" -metadata artist="$one $two $three" -vn -ar 44100 -ac 2 -ab 48k -f mp3 /tmp/tourettes/phrase.mp3 > /dev/null 2>&1
 
 rm /tmp/tourettes/phrase.0.mp3
 $PLAYER /tmp/tourettes/phrase.mp3
