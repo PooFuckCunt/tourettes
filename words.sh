@@ -11,7 +11,7 @@ three1=`sort -R list.txt |head -1`
 PLAYER=`grep 'PLAYER' config | sed -e 's#.*=\(\)#\1#'`
 #added date timestamp to mp3 encodes
 DATE=`date +%d-%m-%Y-%H:%M:%S`
-
+mkdir -p /tmp/tourettes
 find $SW_PATH -iname '*-*' > $FILES
 find $WORDS -iname '*-*' >> $FILES
 for words in $@
