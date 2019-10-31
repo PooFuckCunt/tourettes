@@ -23,11 +23,11 @@ NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1)
 rand=`shuf -i $RANGE -n 1`
 #number of clear space mp3s to merge
 CLEARNUM=$(bc <<<"`echo $rand`*$RANSPACE/100")
+#create dir 
+mkdir -p /tmp/tourettes
 #generate clear mp3 list
 find space -iname "*.mp3" > /tmp/tourettes/clear.lst; find space -iname "*.mp3" >> /tmp/tourettes/clear.lst; find space -iname "*.mp3" >> /tmp/tourettes/clear.lst; find space -iname "*.mp3" >> /tmp/tourettes/clear.lst
 shuf /tmp/tourettes/clear.lst |head -n$CLEARNUM |shuf > /tmp/tourettes/filelist.txt 
-#create dir 
-mkdir -p /tmp/tourettes
 #create random mp3 file list
 find swearwords  -iname '*.mp3' | shuf | shuf  |head -n$rand >> /tmp/tourettes/filelist.txt
 #shuffle and merge list
