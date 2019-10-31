@@ -5,4 +5,4 @@ keep=10
 #range of mp3 numbers to randomly merge e.g play between 1 and 100 mp3s default is 1-65
 RANGE=1-65
 #percentage of silent space between mp3s increase number eqauls more silent intervals between words decrease number results in less silence
-RANSPACE=20
+RANSPACE=14
