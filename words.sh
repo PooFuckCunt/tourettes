@@ -24,10 +24,10 @@ fi
 done
 for words in $@
 do
- cat `grep "/$words-"  $FILES |head -n1` >> /tmp/tourettes/phrase.0.mp3
+ cat `grep "/$words-"  $FILES |shuf |head -n1` >> /tmp/tourettes/phrase.0.mp3
 done
 
-ffmpeg -y -i /tmp/tourettes/phrase.0.mp3 -metadata date="$DATE" -metadata title="$one1 $two1 $three1" -metadata artist="$one $two $three" -vn -ar 44100 -ac 2 -ab 48k -f mp3 /tmp/tourettes/phrase.mp3 > /dev/null 2>&1
+ffmpeg -y -i /tmp/tourettes/phrase.0.mp3 -metadata date="$DATE" -metadata title="$1 $2 $3 $4 $5 $6 $7 $8 $9" -metadata artist="$one $two $three" -vn -ar 44100 -ac 2 -ab 48k -f mp3 /tmp/tourettes/phrase.mp3 > /dev/null 2>&1
 
 rm /tmp/tourettes/phrase.0.mp3
 $PLAYER /tmp/tourettes/phrase.mp3
